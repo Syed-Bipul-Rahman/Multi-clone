@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-mergeDebugResources-37:/layout/fragment_app_list.xml",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/fragment_app_list.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-mergeDebugResources-37:/layout/item_app_grid.xml",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/item_app_grid.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-mergeDebugResources-37:/layout/item_app_add.xml",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/item_app_add.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-mergeDebugResources-37:/layout/activity_home.xml",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/activity_home.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-mergeDebugResources-37:/layout/activity_splash.xml",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-mergeDebugResources-37:/layout/activity_setting.xml",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/activity_setting.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-mergeDebugResources-37:/layout/bottom_sheet_app_actions.xml",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/bottom_sheet_app_actions.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-mergeDebugResources-37:/layout/activity_clone_app.xml",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/activity_clone_app.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-mergeDebugResources-37:/layout/item_action_button.xml",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/item_action_button.xml"
+    },
+    {
+        "merged": "com.dong.multirun.app-mergeDebugResources-37:/layout/item_installed_app.xml",
+        "source": "com.dong.multirun.app-main-40:/layout/item_installed_app.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-mergeDebugResources-37:/layout/item_installed_app.xml",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/item_installed_app.xml"
+    }
+]

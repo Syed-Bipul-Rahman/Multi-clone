@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Multi Run</string>
+
+    <!-- Home -->
+    <string name="add_app">Add App</string>
+    <string name="clone_apps">Clone Apps</string>
+    <string name="action_search">Search</string>
+    <string name="action_install">Install</string>
+    <string name="action_uninstall">Uninstall</string>
+    <string name="action_force_stop">Force stop</string>
+    <string name="action_clear_storage">Clear Storage</string>
+    <string name="action_clone_next">Clone next space</string>
+    <string name="action_create_shortcut">Create shortcut</string>
+    <string name="action_icon_fake">Icon Fake</string>
+    <string name="action_note">Note</string>
+    <string name="action_share">Share</string>
+    <string name="action_reset">Reset</string>
+    <string name="action_app_hide">Hide app</string>
+    <string name="action_app_show">Show app</string>
+    <string name="action_reset_device">Reset Device</string>
+    <string name="action_plugins">Manage Plugin</string>
+    <string name="action_add">Go to install</string>
+    <string name="action_install_app">Install App</string>
+
+    <!-- Clone MultiRunApplication -->
+    <string name="apps_install_from_file">Import from file</string>
+    <string name="installedAppPermissionTip">Please grant permission to query installed apps</string>
+    <string name="select_apps_to_install">Install to SandBox (%1$d)</string>
+
+    <!-- MultiRunApplication settings -->
+    <string name="apps_change">Modify</string>
+    <string name="apps_change_icon">Fake Icon:</string>
+    <string name="apps_change_name">Change name:</string>
+    <string name="apps_tag_hint">tag</string>
+    <string name="apps_change_from_host">System icon</string>
+    <string name="apps_change_from_photo">Album icon</string>
+    <string name="apps_change_reset">Reset</string>
+
+    <!-- Settings -->
+    <string name="setting">Setting</string>
+    <string name="premium_subscription">Premium Subscription</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="modify_gesture_password">Modify Gesture Password</string>
+    <string name="update_version">Check Update</string>
+    <string name="more_apps">More Apps</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="version_prefix">Version </string>
+
+    <!-- Dialogs -->
+    <string name="rename_app">Rename App</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="confirm">Confirm</string>
+    <string name="back">Back</string>
+
+    <!-- Messages -->
+    <string name="app_initialize">Initializing…</string>
+    <string name="app_retry">Retry</string>
+    <string name="loading">Loading…</string>
+    <string name="no_apps_found">No apps found</string>
+    <string name="app_installed">App installed successfully</string>
+    <string name="app_uninstalled">App uninstalled</string>
+</resources>

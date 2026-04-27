@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MultiRun" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:windowBackground">@color/bg_page</item>
+    </style>
+
+    <style name="Theme.MultiRun.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/desktopColorA</item>
+        <item name="android:statusBarColor">@color/desktopColorA</item>
+        <item name="android:navigationBarColor">@color/desktopColorA</item>
+    </style>
+
+    <style name="Theme.MultiRun.HomeOverlay" parent="Theme.MultiRun">
+        <item name="android:windowBackground">@color/desktopColorA</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="Theme.AgentActivity" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="Theme.AgentActivity.OptEdgeToEdge" parent="@style/Theme.AgentActivity">
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
+
+    <style name="Theme.AgentActivity.Translucent" parent="@android:style/Theme.Translucent.NoTitleBar">
+    </style>
+</resources>

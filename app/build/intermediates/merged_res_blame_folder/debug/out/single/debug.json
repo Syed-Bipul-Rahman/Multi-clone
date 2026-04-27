@@ -1,0 +1,134 @@
+[
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher_round.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-xxxhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-hdpi_ic_launcher_round.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-hdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/layout_item_action_button.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/item_action_button.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-xxhdpi_ic_launcher.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-xxhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-mdpi_ic_launcher.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-mdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-xhdpi_ic_launcher_round.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-xhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/layout_item_app_grid.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/item_app_grid.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/drawable_ic_arrow_back.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/drawable/ic_arrow_back.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/layout_activity_setting.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/activity_setting.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/layout_bottom_sheet_app_actions.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/bottom_sheet_app_actions.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-xhdpi_ic_launcher.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-xhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/layout_item_installed_app.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/item_installed_app.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-hdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/drawable_bg_home.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/drawable/bg_home.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-xxxhdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/layout_activity_clone_app.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/activity_clone_app.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/layout_fragment_app_list.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/fragment_app_list.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-xxhdpi_ic_launcher_round.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-xxhdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/layout_activity_home.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/activity_home.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-mdpi_ic_launcher_round.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-mdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.dong.multirun.app-merged_res-38:/layout_item_installed_app.xml.flat",
+        "source": "com.dong.multirun.app-main-40:/layout/item_installed_app.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/drawable_ic_menu.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/drawable/ic_menu.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/drawable_bg_app_card.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/drawable/bg_app_card.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/drawable_ic_settings.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/layout_item_app_add.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/item_app_add.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/drawable_ic_add.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/drawable/ic_add.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/drawable_ic_arrow_right.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/drawable/ic_arrow_right.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/drawable_sel_clone_btn.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/drawable/sel_clone_btn.xml"
+    },
+    {
+        "merged": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-merged_res-38:/layout_activity_splash.xml.flat",
+        "source": "/Users/shuvosta/.gradle/daemon/8.4/com.dong.multirun.app-main-40:/layout/activity_splash.xml"
+    }
+]
