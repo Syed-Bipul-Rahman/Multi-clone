@@ -97,6 +97,15 @@ public final class MultiRunApplication extends Application {
 
     @Override
     public final void attachBaseContext(Context context) {
+        // Pre-populate subscription prefs so the engine's C0856Ni0 (reads
+        // "multirun_subscription" / "is_premium") sees premium=true before the
+        // :service process constructs it, bypassing the update-nag gate.
+        context.getSharedPreferences("multirun_subscription", Context.MODE_PRIVATE)
+                .edit()
+                .putBoolean("is_premium", true)
+                .putLong("temporary_end_time", Long.MAX_VALUE / 2)
+                .commit();
+
         // Step 1: NI.e() MUST run first — this is the real engine bootstrap.
         // It loads the virtual engine DEX and sets AbstractC3600lG1.b (the Method).
         // ORDER IS CRITICAL — do not move anything above this call.

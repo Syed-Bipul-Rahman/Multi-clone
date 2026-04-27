@@ -10,10 +10,36 @@ import com.dong.multirun.model.AppInfo
 object CloneEngine {
 
     private const val TAG = "CloneEngine"
-    private const val USER_ID = 1
+    private const val MAX_USERS = 50
 
-    fun install(context: Context, app: AppInfo): Boolean {
-        Log.i(TAG, "install() called for: ${app.packageName}")
+    // Returns all (userId, packageName) pairs present in the sandbox.
+    fun listAllSandboxApps(): List<Pair<Int, String>> {
+        val result = mutableListOf<Pair<Int, String>>()
+        var consecutiveEmpty = 0
+        for (userId in 1..MAX_USERS) {
+            val pkgs = try { VT.b0?.S0(userId) } catch (e: Exception) { null }
+            if (pkgs.isNullOrEmpty()) {
+                consecutiveEmpty++
+                if (consecutiveEmpty >= 3) break // no more spaces allocated
+            } else {
+                consecutiveEmpty = 0
+                pkgs.forEach { pkg -> result.add(userId to pkg) }
+            }
+        }
+        return result
+    }
+
+    // Returns the lowest userId that does not yet have packageName installed.
+    fun getNextUserIdForPackage(packageName: String): Int {
+        for (userId in 1..MAX_USERS) {
+            val pkgs = try { VT.b0?.S0(userId) } catch (e: Exception) { null }
+            if (pkgs == null || !pkgs.contains(packageName)) return userId
+        }
+        return 1
+    }
+
+    fun install(context: Context, app: AppInfo, userId: Int): Boolean {
+        Log.i(TAG, "install() userId=$userId pkg=${app.packageName}")
 
         if (MultiRunApplication.getCloneClassLoader() == null) {
             Log.e(TAG, "Clone ClassLoader is null — engine bootstrap failed")
@@ -21,8 +47,8 @@ object CloneEngine {
         }
 
         return try {
-            val result = AbstractC3080iF1.b(USER_ID, app.packageName)
-            Log.i(TAG, "install result=$result for ${app.packageName}")
+            val result = AbstractC3080iF1.b(userId, app.packageName)
+            Log.i(TAG, "install result=$result userId=$userId pkg=${app.packageName}")
             result == 1
         } catch (th: Throwable) {
             Log.e(TAG, "Exception during install of ${app.packageName}", th)
@@ -30,33 +56,21 @@ object CloneEngine {
         }
     }
 
-    fun launch(context: Context, packageName: String, requestCode: Int) {
-        Log.i(TAG, "launch() called for: $packageName")
+    fun launch(context: Context, packageName: String, userId: Int) {
+        Log.i(TAG, "launch() userId=$userId pkg=$packageName")
         try {
-            val result = VT.b0?.f1(USER_ID, packageName) ?: -1
-            Log.i(TAG, "launch result=$result for $packageName")
+            val result = VT.b0?.f1(userId, packageName) ?: -1
+            Log.i(TAG, "launch result=$result userId=$userId pkg=$packageName")
         } catch (th: Throwable) {
-            Log.e(TAG, "Failed to launch clone for: $packageName", th)
+            Log.e(TAG, "Failed to launch clone userId=$userId pkg=$packageName", th)
         }
     }
 
-    fun isCloned(context: Context, packageName: String): Boolean {
+    fun uninstall(context: Context, packageName: String, userId: Int): Boolean {
+        Log.i(TAG, "uninstall() userId=$userId pkg=$packageName")
         return try {
-            val installed = VT.b0?.S0(USER_ID)
-            val cloned = installed?.contains(packageName) == true
-            Log.d(TAG, "isCloned($packageName) = $cloned")
-            cloned
-        } catch (e: Exception) {
-            Log.e(TAG, "isCloned() failed for $packageName", e)
-            false
-        }
-    }
-
-    fun uninstall(context: Context, packageName: String): Boolean {
-        Log.i(TAG, "uninstall() called for: $packageName")
-        return try {
-            val result = VT.b0?.o1(USER_ID, packageName) ?: -1
-            Log.i(TAG, "uninstall result=$result for $packageName")
+            val result = VT.b0?.o1(userId, packageName) ?: -1
+            Log.i(TAG, "uninstall result=$result userId=$userId pkg=$packageName")
             result == 0
         } catch (e: Exception) {
             Log.e(TAG, "Failed to uninstall $packageName", e)

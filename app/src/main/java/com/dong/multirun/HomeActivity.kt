@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dong.multirun.adapter.AppGridAdapter
 import com.dong.multirun.clone.CloneEngine
-import com.dong.multirun.app.VT
 import com.dong.multirun.fragment.AppActionsBottomSheet
 import com.dong.multirun.model.AppInfo
 import kotlinx.coroutines.Dispatchers
@@ -64,20 +63,21 @@ class HomeActivity : AppCompatActivity() {
         lifecycleScope.launch {
             val apps = withContext(Dispatchers.IO) {
                 try {
-                    val pkgs = VT.b0?.S0(1)
-                    Log.d(TAG, "Sandbox packages: $pkgs")
-                    if (pkgs.isNullOrEmpty()) return@withContext emptyList<AppInfo>()
+                    val entries = CloneEngine.listAllSandboxApps()
+                    Log.d(TAG, "Sandbox entries: $entries")
                     val pm = packageManager
-                    pkgs.mapNotNull { pkg ->
+                    entries.mapNotNull { (userId, pkg) ->
                         try {
                             val info = pm.getApplicationInfo(pkg, 0)
+                            val name = pm.getApplicationLabel(info).toString()
                             AppInfo(
                                 packageName = pkg,
-                                appName = pm.getApplicationLabel(info).toString(),
-                                icon = pm.getApplicationIcon(info)
+                                appName = name,
+                                icon = pm.getApplicationIcon(info),
+                                spaceIndex = userId
                             )
                         } catch (e: Exception) {
-                            Log.w(TAG, "Could not load info for $pkg", e)
+                            Log.w(TAG, "Could not load info for $pkg userId=$userId", e)
                             null
                         }
                     }
@@ -95,8 +95,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun launchApp(app: AppInfo) {
-        Log.i(TAG, "Launching cloned app: ${app.packageName}")
-        CloneEngine.launch(this, app.packageName, 0)
+        Log.i(TAG, "Launching cloned app userId=${app.spaceIndex} pkg=${app.packageName}")
+        CloneEngine.launch(this, app.packageName, app.spaceIndex)
     }
 
     private fun showAppActions(app: AppInfo) {

@@ -141,19 +141,20 @@ class InstalledAppFragment : Fragment() {
 
             withContext(Dispatchers.IO) {
                 selected.forEach { app ->
-                    Log.i(TAG, "Starting clone install for: ${app.packageName}")
+                    val userId = CloneEngine.getNextUserIdForPackage(app.packageName)
+                    Log.i(TAG, "Clone install userId=$userId pkg=${app.packageName}")
                     try {
-                        val ok = CloneEngine.install(requireContext(), app)
+                        val ok = CloneEngine.install(requireContext(), app, userId)
                         if (ok) {
                             successCount++
-                            Log.i(TAG, "Clone install succeeded: ${app.packageName}")
+                            Log.i(TAG, "Clone install succeeded userId=$userId pkg=${app.packageName}")
                         } else {
                             failCount++
-                            Log.e(TAG, "Clone install returned false: ${app.packageName}")
+                            Log.e(TAG, "Clone install returned false userId=$userId pkg=${app.packageName}")
                         }
                     } catch (e: Exception) {
                         failCount++
-                        Log.e(TAG, "Clone install threw exception for ${app.packageName}", e)
+                        Log.e(TAG, "Clone install threw exception pkg=${app.packageName}", e)
                     }
                 }
             }

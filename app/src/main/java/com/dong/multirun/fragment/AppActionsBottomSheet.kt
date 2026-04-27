@@ -66,13 +66,13 @@ class AppActionsBottomSheet : BottomSheetDialogFragment() {
     private fun handleAction(action: AppAction, app: AppInfo) {
         when (action.id) {
             "open" -> {
-                CloneEngine.launch(requireContext(), app.packageName, 0)
+                CloneEngine.launch(requireContext(), app.packageName, app.spaceIndex)
                 dismiss()
             }
             "uninstall" -> {
                 lifecycleScope.launch(Dispatchers.IO) {
-                    val ok = CloneEngine.uninstall(requireContext(), app.packageName)
-                    Log.i("AppActionsBottomSheet", "uninstall ${app.packageName} ok=$ok")
+                    val ok = CloneEngine.uninstall(requireContext(), app.packageName, app.spaceIndex)
+                    Log.i("AppActionsBottomSheet", "uninstall userId=${app.spaceIndex} ${app.packageName} ok=$ok")
                 }
                 onUninstall?.invoke(app)
                 dismiss()

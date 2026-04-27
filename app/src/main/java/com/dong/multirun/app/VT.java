@@ -87,6 +87,7 @@ public class VT {
     // Launch cloned package (transaction 12).
     // f1(userId, pkgName) -> int
     public int f1(int i, String str) {
+        Log.d(DTAG, "f1: userId=" + i + " pkg=" + str);
         Parcel p = Parcel.obtain();
         Parcel r = Parcel.obtain();
         try {
@@ -94,11 +95,17 @@ public class VT {
             p.writeString(str);
             p.writeInt(0);
             p.writeInt(i);
-            ((C0067Av0) this.Z).transact(12, p, r, 0);
+            boolean ok = ((C0067Av0) this.Z).transact(12, p, r, 0);
+            Log.d(DTAG, "f1: transact returned=" + ok);
             r.readException();
-            return r.readInt();
+            int result = r.readInt();
+            Log.d(DTAG, "f1: result=" + result);
+            return result;
         } catch (RemoteException e) {
-            Log.e(TAG, "f1: transact failed", e);
+            Log.e(DTAG, "f1: RemoteException", e);
+            return -1;
+        } catch (Exception e) {
+            Log.e(DTAG, "f1: unexpected exception", e);
             return -1;
         } finally {
             r.recycle();
