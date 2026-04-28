@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 import com.dong.multirun.R;
 import com.google.android.material.tabs.TabLayout;
 import java.lang.NullPointerException;
@@ -28,10 +28,10 @@ public final class ActivityCloneAppBinding implements ViewBinding {
   public final Toolbar toolbar;
 
   @NonNull
-  public final ViewPager viewPager;
+  public final ViewPager2 viewPager;
 
   private ActivityCloneAppBinding(@NonNull LinearLayout rootView, @NonNull TabLayout tabLayout,
-      @NonNull Toolbar toolbar, @NonNull ViewPager viewPager) {
+      @NonNull Toolbar toolbar, @NonNull ViewPager2 viewPager) {
     this.rootView = rootView;
     this.tabLayout = tabLayout;
     this.toolbar = toolbar;
@@ -78,7 +78,7 @@ public final class ActivityCloneAppBinding implements ViewBinding {
       }
 
       id = R.id.viewPager;
-      ViewPager viewPager = ViewBindings.findChildViewById(rootView, id);
+      ViewPager2 viewPager = ViewBindings.findChildViewById(rootView, id);
       if (viewPager == null) {
         break missingId;
       }

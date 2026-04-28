@@ -6,11 +6,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import androidx.viewpager.widget.ViewPager
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
+import com.dong.multirun.MultiRunApplication
 import com.dong.multirun.fragment.InstalledAppFragment
 import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class CloneAppActivity : AppCompatActivity() {
 
@@ -19,6 +21,8 @@ class CloneAppActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_PKG  = "extra_pkg"
         const val EXTRA_NAME = "extra_name"
+
+        private val TAB_TITLES = listOf("User Apps", "System Apps")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,17 +31,32 @@ class CloneAppActivity : AppCompatActivity() {
 
         val toolbar   = findViewById<Toolbar>(R.id.toolbar)
         val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
-        val viewPager = findViewById<ViewPager>(R.id.viewPager)
+        val viewPager = findViewById<ViewPager2>(R.id.viewPager)
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = ""
 
-        viewPager.adapter = ClonePagerAdapter(supportFragmentManager)
-        tabLayout.setupWithViewPager(viewPager)
+        viewPager.adapter = ClonePagerAdapter(this)
 
-        // FIX: Verify the clone ClassLoader is ready before allowing installs.
-        // If it's null the user should know immediately rather than silently failing.
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = TAB_TITLES[position]
+        }.attach()
+
+        checkCloneEngine()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
+    }
+
+    fun onCloneInstallComplete(successCount: Int, failCount: Int) {
+        Log.i(TAG, "Clone install complete — success=$successCount, fail=$failCount")
+    }
+
+    private fun checkCloneEngine() {
         val cloneClassLoader = MultiRunApplication.getCloneClassLoader()
         if (cloneClassLoader == null) {
             Log.e(TAG, "Clone ClassLoader is null — CloneEngine will not work!")
@@ -51,36 +70,21 @@ class CloneAppActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressedDispatcher.onBackPressed()
-        return true
-    }
-
-    /**
-     * Called by InstalledAppFragment after clone installs complete.
-     * FIX: replaces the old installApp() which just called setResult+finish
-     *      without ever invoking the clone engine.
-     */
-    fun onCloneInstallComplete(successCount: Int, failCount: Int) {
-        Log.i(TAG, "Clone install complete — success=$successCount, fail=$failCount")
-        // Refresh home screen or notify HomeActivity if needed
-        // e.g. setResult(RESULT_OK) if started with startActivityForResult
-    }
-
     // -------------------------------------------------------------------------
     // Pager adapter
     // -------------------------------------------------------------------------
 
-    private inner class ClonePagerAdapter(fm: FragmentManager) :
-        FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+    private inner class ClonePagerAdapter(
+        activity: FragmentActivity
+    ) : FragmentStateAdapter(activity) {  // ✅ FragmentStateAdapter, not FragmentPagerAdapter
 
-        private val tabs = listOf(
-            "User Apps"   to InstalledAppFragment.newInstance(showSystem = false),
-            "System Apps" to InstalledAppFragment.newInstance(showSystem = true)
-        )
+        override fun getItemCount(): Int = TAB_TITLES.size
 
-        override fun getItem(position: Int): Fragment = tabs[position].second
-        override fun getCount(): Int                  = tabs.size
-        override fun getPageTitle(position: Int): CharSequence = tabs[position].first
+        override fun createFragment(position: Int): Fragment =
+            when (position) {
+                0 -> InstalledAppFragment.newInstance(showSystem = false)
+                1 -> InstalledAppFragment.newInstance(showSystem = true)
+                else -> throw IllegalArgumentException("Unknown tab position: $position")
+            }
     }
 }
